@@ -14,13 +14,13 @@ public class PlayerControl : MonoBehaviour {
     {
         playerRigidBody = player.GetComponent<Rigidbody2D>();
     }
+    /// <summary>
+    /// Limits the velocity of the player game object to the playerMaxSpeed variable.
+    /// <params>@None</params> 
+    /// <returns>@Void</returns>
+    /// </summary>
     private void limitVelocity()
     {
-        /***
-         * Limits the velocity of the player game object to the playerMaxSpeed variable.
-         * @params None
-         * @returns void
-         * */
         if (playerRigidBody.velocity.x > playerMaxSpeed)
         {
             playerRigidBody.velocity = new Vector2(playerMaxSpeed, playerRigidBody.velocity.y);
