@@ -14,12 +14,13 @@ public class PlayerControl : MonoBehaviour {
     {
         playerRigidBody = player.GetComponent<Rigidbody2D>();
     }
+
     /// <summary>
     /// Limits the velocity of the player game object to the playerMaxSpeed variable.
     /// <params>@None</params> 
     /// <returns>@Void</returns>
     /// </summary>
-    private void limitVelocity()
+    private void LimitVelocity()
     {
         if (playerRigidBody.velocity.x > playerMaxSpeed)
         {
@@ -49,7 +50,7 @@ public class PlayerControl : MonoBehaviour {
         Vector2 movement = new Vector2(horizontalAxis * playerSpeedMult, verticalAxis * playerSpeedMult);
         playerRigidBody.AddForce(movement,ForceMode2D.Impulse);
 
-        limitVelocity();
+        LimitVelocity();
 
         if(horizontalAxis == 0.0f)
         {
@@ -61,6 +62,7 @@ public class PlayerControl : MonoBehaviour {
         }
 
     }
+
     // Update is called once per frame
     void Update ()
     {
