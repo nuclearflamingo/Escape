@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
 
@@ -14,13 +12,14 @@ public class PlayerControl : MonoBehaviour {
     {
         playerRigidBody = player.GetComponent<Rigidbody2D>();
     }
-    private void limitVelocity()
+
+    /// <summary>
+    /// Limits the velocity of the player game object to the playerMaxSpeed variable.
+    /// <params>@None</params> 
+    /// <returns>@Void</returns>
+    /// </summary>
+    private void LimitVelocity()
     {
-        /***
-         * Limits the velocity of the player game object to the playerMaxSpeed variable.
-         * @params None
-         * @returns void
-         * */
         if (playerRigidBody.velocity.x > playerMaxSpeed)
         {
             playerRigidBody.velocity = new Vector2(playerMaxSpeed, playerRigidBody.velocity.y);
@@ -49,7 +48,7 @@ public class PlayerControl : MonoBehaviour {
         Vector2 movement = new Vector2(horizontalAxis * playerSpeedMult, verticalAxis * playerSpeedMult);
         playerRigidBody.AddForce(movement,ForceMode2D.Impulse);
 
-        limitVelocity();
+        LimitVelocity();
 
         if(horizontalAxis == 0.0f)
         {
@@ -61,6 +60,7 @@ public class PlayerControl : MonoBehaviour {
         }
 
     }
+
     // Update is called once per frame
     void Update ()
     {
