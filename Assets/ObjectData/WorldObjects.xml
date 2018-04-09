@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<interactable>
+	<object>
+		<object_id>Table001</object_id>
+		<header>A Table</header>
+		<description>A table. There isn't anything particularly noteworthy about it. 
+		Its surface is bare.</description>
+		<event>EventTest</event>
+	</object>
+</interactable>
